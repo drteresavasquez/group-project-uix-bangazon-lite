@@ -15,6 +15,7 @@ function generateUsers () {
       "first_name": firstName,
       "last_name": lastName,
       "phone": phoneNumber,
+      "email": (faker.internet.email()).toLowerCase(),
       "address": faker.address.streetAddress(),
       "city": faker.address.city(),
       "zip": faker.address.zipCode(),
