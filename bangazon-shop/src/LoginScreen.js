@@ -48,11 +48,11 @@ export default class LoginScreen extends Component {
     this.setState({ fields });
   };
 
-  logout = () =>{
-      this.setState({
+    logout = () =>{
+        this.setState({
         userAuthed: false
-      })
-  }
+        })
+    }
 
   render() {
       if(!this.state.userAuthed){
@@ -90,8 +90,7 @@ export default class LoginScreen extends Component {
       }else{
         return (
             <div>
-                <Header />
-                {/* logout={this.logout()} */}
+                <Header logout={this.logout}/>
                 <UserProfile user={this.state.user}/>
             </div>
         );

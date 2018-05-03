@@ -12,7 +12,8 @@ export default class Header extends Component{
                         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form> */}
 
-                    {/* <button className="btn" onClick={()=>{this.props.logout()}}>Logout</button> */}
+
+                    <button onClick={this.props.logout} className="btn">Logout</button>
             </nav>
 
         )
