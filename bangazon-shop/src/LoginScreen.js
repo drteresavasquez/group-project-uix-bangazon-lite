@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 // import Happy from './Happy';
+import logo from './images/logo.png';
 import UserProfile from './UserProfile';
 // import isEmail from 'validator/lib/isEmail';
+import './LoginScreen.css';
+import Header from './Header';
 
 export default class LoginScreen extends Component {
     state = {
@@ -9,7 +12,7 @@ export default class LoginScreen extends Component {
           email: '',
           password: ''
         },
-        fieldErrors: {},
+        fieldErrors: false,
         user: {},
         userAuthed: false
       };
@@ -18,15 +21,22 @@ export default class LoginScreen extends Component {
     fetch(`http://localhost:3000/users?email=${this.state.fields.email}&&password=${this.state.fields.password}`)
     .then((data)=>{
       return data.json();
-    }).then((data2)=>{
-        this.setState({ 
-            user: data2[0],
-            userAuthed: true,
-            fields: {
-                email: '',
-                password: ''
-            }
-        });
+    }).then((userArray)=>{
+        if (userArray.length===0){
+            console.log("NO USERS");
+            this.setState({ 
+                fieldErrors: true
+            });
+        }else{
+            this.setState({ 
+                user: userArray[0],
+                userAuthed: true,
+                fields: {
+                    email: '',
+                    password: ''
+                }
+            });
+        }
         console.log(this.state.user);
     })
     evt.preventDefault();
@@ -38,11 +48,19 @@ export default class LoginScreen extends Component {
     this.setState({ fields });
   };
 
+  logout = () =>{
+      this.setState({
+        userAuthed: false
+      })
+  }
+
   render() {
       if(!this.state.userAuthed){
         return (
-            <div className="container">
-              <h1>Login</h1>
+        <div className="jumbotron jumbotron-fluid">
+             <div className="container">
+             <div className="logoimg"><img src={logo} alt="Logo"/></div>
+              <h1 className="loginHeader">Login</h1>
                   <form onSubmit={this.onFormSubmit}>
                       <div className="form-group">
                           <input
@@ -53,8 +71,6 @@ export default class LoginScreen extends Component {
                               value={this.state.fields.email}
                               onChange={this.onInputChange}
                           />
-                          <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-                          <span style={{ color: 'red' }}>{ this.state.fieldErrors.email }</span>
                       </div>
                       <div className="form-group">
                           <input
@@ -65,15 +81,19 @@ export default class LoginScreen extends Component {
                               value={this.state.fields.name}
                               onChange={this.onInputChange}
                           />
-                          <span style={{ color: 'red' }}>{ this.state.fieldErrors.password }</span>
                       </div>
                   <button type="submit" className="btn btn-primary">Submit</button>
               </form>
             </div>
+        </div>
           );
       }else{
         return (
-            <UserProfile user={this.state.user}/>
+            <div>
+                <Header />
+                {/* logout={this.logout()} */}
+                <UserProfile user={this.state.user}/>
+            </div>
         );
       }
   }

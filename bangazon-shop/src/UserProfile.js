@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 export default class UserProfile extends Component {
     state = {
         fields: this.props.user
@@ -27,6 +28,7 @@ export default class UserProfile extends Component {
     
       render() {
         return (
+        <div className="jumbotron jumbotron-fluid">
           <div className="container">
             <h1>Update User Profile</h1>
     
@@ -137,6 +139,7 @@ export default class UserProfile extends Component {
         </form>
 
           </div>
+        </div>
         );
       }
 }
