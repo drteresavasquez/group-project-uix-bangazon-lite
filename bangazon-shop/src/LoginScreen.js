@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Happy from './Happy';
+// import Happy from './Happy';
+import UserProfile from './UserProfile';
+// import isEmail from 'validator/lib/isEmail';
 
 export default class LoginScreen extends Component {
     state = {
@@ -7,6 +9,7 @@ export default class LoginScreen extends Component {
           email: '',
           password: ''
         },
+        fieldErrors: {},
         user: {},
         userAuthed: false
       };
@@ -51,6 +54,7 @@ export default class LoginScreen extends Component {
                               onChange={this.onInputChange}
                           />
                           <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                          <span style={{ color: 'red' }}>{ this.state.fieldErrors.email }</span>
                       </div>
                       <div className="form-group">
                           <input
@@ -61,6 +65,7 @@ export default class LoginScreen extends Component {
                               value={this.state.fields.name}
                               onChange={this.onInputChange}
                           />
+                          <span style={{ color: 'red' }}>{ this.state.fieldErrors.password }</span>
                       </div>
                   <button type="submit" className="btn btn-primary">Submit</button>
               </form>
@@ -68,7 +73,7 @@ export default class LoginScreen extends Component {
           );
       }else{
         return (
-            <Happy user={this.state.user}/>
+            <UserProfile user={this.state.user}/>
         );
       }
   }
