@@ -31,8 +31,21 @@ export default class UserProfile extends Component {
         <div className="jumbotron jumbotron-fluid">
           <div className="container">
             <h1>Update User Profile</h1>
+            <img src={this.props.user.image} alt="User avatar"/>
     
             <form onSubmit={this.onFormSubmit}>
+            <div className="form-row">
+            <div className="form-group col-md-12">
+                        <label htmlFor="image">Image URL</label>
+                        <input 
+                            type="text" className="form-control" id="image" placeholder='Your Image'
+                            name='image'
+                            value={this.state.fields.image}
+                            onChange={this.onInputChange}
+                        />
+                    </div>
+                
+            </div>
                 <div className="form-row">
                     <div className="form-group col-md-6">
                         <label htmlFor="inputFN">First Name</label>
@@ -95,6 +108,18 @@ export default class UserProfile extends Component {
                         onChange={this.onInputChange}
                     />
                 </div>
+                <div className="form-group col-md-6">
+                        <label htmlFor="city">City</label>
+                        <input 
+                            id="city"
+                            className="form-control" 
+                            placeholder='City'
+                            name='city'
+                            value={this.state.fields.city}
+                            onChange={this.onInputChange}
+                        />
+                    </div>
+                
 
                 <div className="form-row">
 
@@ -104,18 +129,6 @@ export default class UserProfile extends Component {
                             type="text" className="form-control" id="phone" placeholder='Phone'
                             name='phone'
                             value={this.state.fields.phone}
-                            onChange={this.onInputChange}
-                        />
-                    </div>
-
-                    <div className="form-group col-md-6">
-                        <label htmlFor="city">City</label>
-                        <input 
-                            id="city"
-                            className="form-control" 
-                            placeholder='City'
-                            name='city'
-                            value={this.state.fields.city}
                             onChange={this.onInputChange}
                         />
                     </div>

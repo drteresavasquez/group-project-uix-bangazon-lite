@@ -14,13 +14,14 @@
     },
     {
       "id": 2,
-      "first_name": "Tester",
-      "last_name": "Clet",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/therealmarvin/128.jpg",
+      "first_name": "Filomena",
+      "last_name": "Cletus",
       "phone": "331-122-5422",
       "email": "mazie70@hotmail.com",
       "address": "10730 Keenan Terrace",
       "city": "South Brandon",
-      "zip": "16384-9831",
+      "zip": "16384-9830",
       "password": "lPsJTahly9rAmp4"
     },
     {
