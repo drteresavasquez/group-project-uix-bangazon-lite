@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-// import Happy from './Happy';
-import logo from './images/logo.png';
-import UserProfile from './UserProfile';
-// import isEmail from 'validator/lib/isEmail';
+import logo from './../images/logo.png';
+// import UserProfile from './UserProfile'; //for edit user
 import './LoginScreen.css';
-import Header from './Header';
+import Header from './../Header'; // Nav bar
+import Products from './../Products'; // for products listing
 
 export default class LoginScreen extends Component {
     state = {
@@ -18,7 +17,7 @@ export default class LoginScreen extends Component {
       };
 
   onFormSubmit = (evt) => {
-    fetch(`http://localhost:3000/users?email=${this.state.fields.email}&&password=${this.state.fields.password}`)
+    fetch(`http://localhost:4000/users?email=${this.state.fields.email}&&password=${this.state.fields.password}`)
     .then((data)=>{
       return data.json();
     }).then((userArray)=>{
@@ -91,7 +90,8 @@ export default class LoginScreen extends Component {
         return (
             <div>
                 <Header logout={this.logout}/>
-                <UserProfile user={this.state.user}/>
+                {/* <UserProfile user={this.state.user}/> */}
+                <Products />
             </div>
         );
       }
