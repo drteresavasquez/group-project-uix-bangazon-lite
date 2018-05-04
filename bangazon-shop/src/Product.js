@@ -17,7 +17,7 @@ const Product = ({ product }) => (
         <div className='six wide column'>
           <p>
             {
-              `${product.product_name}`
+              `${product.product_name} (${product.qty})`
             }
           </p>
           <p>
@@ -28,7 +28,7 @@ const Product = ({ product }) => (
           <div
             className='ui left floated large button buyNow'
           >
-            Buy Now
+            More Info
           </div>
         </div>
       </div>

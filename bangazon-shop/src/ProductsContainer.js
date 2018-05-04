@@ -36,7 +36,7 @@ export default class ProductsContainer extends Component{
             <h1>Products</h1>
             <div className="row">
                 <div className="col-sm-3">
-                1 of 2
+                {/* VerticalMenu will go here */}
                 </div>
                 <div className="col-sm-8">
                 {

@@ -4,6 +4,8 @@ import logo from './../images/logo.png';
 import './LoginScreen.css';
 import Header from './../Header'; // Nav bar
 import ProductsContainer from './../ProductsContainer'; // for products listing
+import { Route } from 'react-router-dom';
+
 
 export default class LoginScreen extends Component {
     state = {
@@ -91,7 +93,7 @@ export default class LoginScreen extends Component {
             <div>
                 <Header logout={this.logout}/>
                 {/* <UserProfile user={this.state.user}/> */}
-                <ProductsContainer />
+                <Route path='/products' component={ProductsContainer} />
             </div>
         );
       }
