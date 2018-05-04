@@ -1,10 +1,9 @@
-body{
-    background-image: url('./../images/loginclothesbg.jpeg');
-    background-size:cover;
-}
 
 .jumbotron{
     background: none;
+    background-image: url('./../images/loginclothesbg.jpeg');
+    background-size:cover;
+    height: 100vh;
 }
 
 .logoimg img{

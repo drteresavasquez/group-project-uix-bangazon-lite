@@ -3,7 +3,7 @@ import logo from './../images/logo.png';
 // import UserProfile from './UserProfile'; //for edit user
 import './LoginScreen.css';
 import Header from './../Header'; // Nav bar
-import Products from './../Products'; // for products listing
+import ProductsContainer from './../ProductsContainer'; // for products listing
 
 export default class LoginScreen extends Component {
     state = {
@@ -91,7 +91,7 @@ export default class LoginScreen extends Component {
             <div>
                 <Header logout={this.logout}/>
                 {/* <UserProfile user={this.state.user}/> */}
-                <Products />
+                <ProductsContainer />
             </div>
         );
       }
