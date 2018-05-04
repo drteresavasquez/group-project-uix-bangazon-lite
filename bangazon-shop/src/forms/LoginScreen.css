@@ -4,6 +4,7 @@
     background-image: url('./../images/loginclothesbg.jpeg');
     background-size:cover;
     height: 100vh;
+    margin: 0px;
 }
 
 .logoimg img{

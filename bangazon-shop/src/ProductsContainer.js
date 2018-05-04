@@ -33,6 +33,7 @@ export default class ProductsContainer extends Component{
       } else {
         return (
             <div className="prodContainer">
+            <h1>Products</h1>
             <div className="row">
                 <div className="col-sm-3">
                 1 of 2

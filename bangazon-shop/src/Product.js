@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 const Product = ({ product }) => (
@@ -10,21 +10,25 @@ const Product = ({ product }) => (
           <img
             src={product.image}
             style={{ width: '212px' }}
-            alt='album'
+            alt='product'
           />
         </div>
         <div className='one wide column' />
         <div className='six wide column'>
           <p>
             {
-              `${product.product_name}
-              - $${product.price}`
+              `${product.product_name}`
+            }
+          </p>
+          <p>
+            {
+              `$${product.price}`
             }
           </p>
           <div
-            className='ui left floated large button'
+            className='ui left floated large button buyNow'
           >
-            Close
+            Buy Now
           </div>
         </div>
       </div>
