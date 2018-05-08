@@ -92,8 +92,11 @@ export default class LoginScreen extends Component {
         return (
             <div>
                 <Header logout={this.logout}/>
+                <div className='spacer row' />
+                <div className='row'>
                 {/* <UserProfile user={this.state.user}/> */}
                 <Route path='/products' component={ProductsContainer} />
+                </div>
             </div>
         );
       }

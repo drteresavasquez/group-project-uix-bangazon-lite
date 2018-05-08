@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const Product = ({ product }) => (
@@ -25,15 +25,17 @@ const Product = ({ product }) => (
               `$${product.price}`
             }
           </p>
-          <div
-            className='ui left floated large button buyNow'
-          >
-            More Info
+          <Link 
+                to={`/product/${product.id}`}
+                className='ui left floated large button buyNow'
+                key={product.id}
+                >
+                More Info
+            </Link> 
           </div>
         </div>
       </div>
-    </div>
-    <div className='productPadding' />
+      <div className='productPadding' />
   </div>
 );
 

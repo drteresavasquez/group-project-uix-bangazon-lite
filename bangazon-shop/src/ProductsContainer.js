@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Product from './Product';
-import './Products.css';
+import VerticalMenu from './VerticalMenu';
+import './styles/Products.css';
+
 
 export default class ProductsContainer extends Component{
     state = {
@@ -33,10 +35,11 @@ export default class ProductsContainer extends Component{
       } else {
         return (
             <div className="prodContainer">
-            <h1>Products</h1>
             <div className="row">
                 <div className="col-sm-3">
-                {/* VerticalMenu will go here */}
+                <VerticalMenu
+                  products={this.state.products}
+                  />
                 </div>
                 <div className="col-sm-8">
                 {
